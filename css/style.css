@@ -23,6 +23,8 @@
     --fs-200: clamp(0.5rem, 1vw + 0.25rem. 1rem);
     --font-weight-small: 700;
     --main-organge:rgb(255, 115, 0);
+    --main-purple: rgba(10, 0, 39, 0.962);
+    --light-orange:rgb(206, 110, 32);
 }
 
 header{
@@ -38,8 +40,8 @@ header{
     font-size: 2.2rem;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
-.menu-icon img{
-    filter: invert(100%);
+.menu-icon i{
+    font-size: 40px; 
     display: none;
 }
 
@@ -156,13 +158,10 @@ header{
 
 .menu-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
-    grid-column-gap:1.5rem;
+    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+    grid-column-gap:2rem;
     align-items: center;
     justify-content: center;
-    padding: 0px 35px;
-    margin-top: 0px;
-    
 }
 
 .box{
@@ -175,21 +174,22 @@ header{
     justify-content: center;
     background:#feeee7 ;
     border-radius: 0.5rem;
-    padding: 10px 50px;
-    margin-right: 20px;
-    min-width: 300px;
+    padding: 20px 50px;
+    min-width: 250px;
+    text-align: center;
     
 }
 
 .box-img{
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     
 }
 .box-img img {
     background:#feeee7 ;
     width: 100%;
     height: 100%;
+    margin: 0 auto;
     
 }
 
@@ -237,6 +237,8 @@ section .service-container{
     grid-gap:1.5rem;
     margin-top: 2rem;
     grid-template-columns: repeat(auto-fit,minmax(240px, auto));
+    align-items: center;
+    justify-content: center;
 }
 
 .s-box{
@@ -265,8 +267,8 @@ section .service-container{
 }
 section .cta{
     background-color: #feeee7;
-    height: 280px;
-    width: 80%;
+    padding: 20px ;
+    width: 85%;
     border-radius: 10px;
     text-align: center;
     display:flex;
@@ -276,11 +278,23 @@ section .cta{
 
 }
 
+
 .main{
     display: flex;
     padding: 50px 100px;
     width: 100%;
+    justify-items: center;
+    column-gap: 40px;
+    
 }
+
+.main .col{
+    min-width: 190px;
+    
+}
+
+
+
 .main h4{
     position: relative;
     margin-bottom: 20px;
@@ -316,7 +330,7 @@ section .cta{
 .col .social {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 1vw;
  
 }
 
@@ -343,18 +357,59 @@ section .cta{
 }
 
 @media screen and (max-width: 1100px){
-    .col{
-    min-width: 50%;
-    
+    .menu-container{
+        padding:10px 30px;
+        gap: 30px;
+    }
+    .box{
+        padding: 10px 30px;
+        
+    }
 
+    .main{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(160px, auto));
+        padding: auto 40px;
+        
+    }
+   .col{
+    margin: 1.2rem auto;
    }
 }
 
 
-@media screen and (max-width: 690px){
+@media screen and (max-width: 691px){
     *{width: 100%;}
+    
+    .menu-icon i{
+        display:flex;
+        justify-content: center;
+        padding-top: 35px;
+    
+    }
+    .nav-bar:hover{
+        cursor: pointer;
+    }
     .nav-bar{
-        display: none;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: -400px;
+        right: 0;
+        text-align: center;
+        width:100%;
+        margin: 0;
+        background-color:var(--light-orange);
+        padding: 20px 0px;
+    }
+    .nav-bar.active{
+        top: 123px;
+    }
+    .nav-bar li, .nav-bar a{
+        background-color: var(--light-purple);
+        color: white;
+        text-align: center;
     }
     .logo{
         padding-left: 5vw;
@@ -382,25 +437,52 @@ section .cta{
        gap: 20px;
       
     }
+    .heading{
+        margin-bottom: 20px;  
+    }
+   
    .about-img img {
         width: 300px;
    }
    .box{
-    margin: 20px auto;
+    margin: 20px auto;}
+    .s-box{
+        padding: 30px;
+    }
+   
+  
 }
 
-@media screen and (max-width: 500px){
-    .home .home-img{
-      margin-left: 12%; 
+@media screen and (max-width: 552px) {
+    .home .home-img {
+        margin-left: 12%; 
     }
-    .menu-container{
+    
+    .menu-container {
         padding: 0px 20px;
         margin: 0 0;
     }
-    .box{
+    .box {
         margin: 10px auto;
+        padding: 20px 0;
+        width: 250px;
     }
-    .services{
+    .services {
         margin-top: 6%;
     }
+    .main {
+        justify-content: center;
+        text-align: center;
+    }
+    .col h4::before {
+        left: 34%;
+    }
+   
+}
+@media  screen and (max-width:454px) {
+  
+    .col .social{
+        gap:10px;
+      }
+    
 }
